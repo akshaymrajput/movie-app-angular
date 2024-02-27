@@ -21,10 +21,11 @@
   border: 1px solid white;
   background-color: white;
   border-radius: 5px;
+  width: 200px;
 }
 
 .poster img {
-  width: 200px;
+  width: 100%;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -113,7 +114,10 @@
   margin-bottom: 10px;
   text-align: start;
   gap: 30px;
-  word-wrap: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .review .rating {
@@ -155,6 +159,10 @@
 }
 
 @media (max-width: 768px) {
+  .poster {
+    width: 100%;
+  }
+
   .movie-details {
     flex-wrap: wrap;
   }
@@ -171,5 +179,13 @@
 
   .video-container iframe {
     width: 100%;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .content .info {
+    margin-top: 20px;
   }
 }
