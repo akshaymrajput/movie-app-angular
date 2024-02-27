@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="movie-details">
+        <div class="content">
+            <div class="poster">
+                <img
+                    [src]="handleImgPoster(movie?.poster_path)"
+                    alt="Movie Poster"
+                />
+            </div>
+            <div class="info">
+                <h1 class="title">{{ movie?.title }}</h1>
+                <p class="tagline">{{ movie?.tagline }}</p>
+                <div class="details">
+                    <p>
+                        <strong>Release Date:</strong> {{ movie?.release_date }}
+                    </p>
+                    <p><strong>Runtime:</strong> {{ movie?.runtime }} mins</p>
+                    <p><strong>Genres:</strong> {{ getGenres() }}</p>
+                    <p><strong>Overview:</strong></p>
+                    <p>{{ movie?.overview }}</p>
+                    <p><strong>Production Companies:</strong></p>
+                    <ul class="production-companies">
+                        @for(company of movie?.production_companies; track
+                        company.id) {
+                        <li>
+                            {{ company.name }}
+                        </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @if(movieVideos.length) {
+        <div class="videos">
+            <h2>Trailers</h2>
+            <div class="video-container">
+                @for(safeUrl of safeVideoUrls.slice(0,2); track $index) {
+                <iframe
+                    width="560"
+                    height="315"
+                    [src]="safeUrl"
+                    frameborder="0"
+                    allowfullscreen
+                ></iframe>
+                }
+            </div>
+        </div>
+        }
+
+        <div class="reviews">
+            @if(movieReviews.length > 0) {
+            <div class="reviews-container">
+                <h2>Reviews</h2>
+                @for(review of movieReviews.slice(0, 3); track review.id) {
+                <div class="review">
+                    <div class="author">
+                        <img
+                            [src]="
+                                handleAvatar(review.author_details.avatar_path)
+                            "
+                            alt="Author Avatar"
+                        />
+                        <p>{{ review.author }}</p>
+                    </div>
+                    <div class="content">
+                        <p [innerHTML]="review.content"></p>
+                        <p class="rating">
+                            Rating: {{ review.author_details.rating }}
+                        </p>
+                    </div>
+                    <div class="created-at">
+                        <p>Posted on: {{ formatDate(review.created_at) }}</p>
+                    </div>
+                    <a [href]="review.url" target="_blank">Read more</a>
+                </div>
+                }
+            </div>
+            } @else {
+            <div class="no-reviews" *ngIf="movieReviews.length === 0">
+                <p>No reviews available for - "{{ movie?.title }}"</p>
+            </div>
+
+            }
+        </div>
+
+        @if(movieRecommendations.length > 0) {
+        <div class="recommendations">
+            <h2>Recommendations</h2>
+            <div class="container">
+                @for(recommendation of movieRecommendations.slice(0, 3); track
+                recommendation.id) {
+                <app-card [movie]="recommendation"></app-card>
+                }
+            </div>
+        </div>
+        } @else {
+        <div class="no-recommendations">
+            <p>No recommendations available for - "{{ movie?.title }}"</p>
+        </div>
+        }
+    </div>
+</div>

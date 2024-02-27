@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: skyblue;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}

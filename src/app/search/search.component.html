@@ -1,0 +1,27 @@
+<div class="searchBar">
+    <div class="container">
+        <a routerLink="/" class="logo">MovieApp</a>
+        <div class="search-form">
+            <input
+                type="text"
+                placeholder="Search movies..."
+                class="search-input"
+                (keyup.enter)="handleSubmit($event)"
+            />
+        </div>
+    </div>
+</div>
+
+<!-- <div class="searchBar">
+    <div class="container">
+        <a routerLink="/" class="logo">MovieApp</a>
+        <form class="search-form" (submit)="handleFormSubmit($event)">
+            <input
+                type="text"
+                placeholder="Search movies..."
+                class="search-input"
+                (input)="onInputChange($event)"
+            />
+        </form>
+    </div>
+</div> -->

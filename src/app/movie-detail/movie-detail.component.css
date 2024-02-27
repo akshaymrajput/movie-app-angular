@@ -1,0 +1,175 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.poster {
+  margin-right: 20px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.poster img {
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  color: skyblue;
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin-bottom: 5px;
+}
+
+.production-companies {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.production-companies li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.overview {
+  margin-top: 20px;
+}
+
+.videos {
+  margin-top: 20px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.video-container iframe {
+  padding: 20px;
+}
+
+.reviews {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review {
+  width: calc(100% - 20px);
+  padding: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.review .author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.review .author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.review .content {
+  margin-bottom: 10px;
+  text-align: start;
+  gap: 30px;
+  word-wrap: break-word;
+}
+
+.review .rating {
+  font-weight: bold;
+}
+
+.review .created-at {
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.review a {
+  margin-top: 3px;
+  display: block;
+  color: gray;
+  text-decoration: none;
+}
+
+.review a:hover {
+  text-decoration: underline;
+}
+
+.no-reviews,
+.no-recommendations {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid gray;
+  letter-spacing: 2px;
+}
+
+.recommendations .container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .movie-details {
+    flex-wrap: wrap;
+  }
+
+  .videos {
+    margin: 0 auto;
+  }
+
+  .video-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .video-container iframe {
+    width: 100%;
+  }
+}

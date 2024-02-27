@@ -1,13 +1,29 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
+import { SearchComponent } from "./search/search.component";
+import { filter } from "rxjs";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet, SearchComponent],
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.css",
 })
-export class AppComponent {
-  title = 'movie-app';
+export class AppComponent implements OnInit, OnDestroy {
+  title = "movie-app";
+
+  subscription: any;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.subscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => window.scrollTo(0, 0));
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
