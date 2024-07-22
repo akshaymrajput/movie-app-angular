@@ -17,12 +17,12 @@ const apiPaths = {
         `/movie/${id}/reviews?api_key=${apiKey}&language=en-US`,
     movieRecommendations: (id: number) =>
         `/movie/${id}/recommendations?api_key=${apiKey}&language=en-US&page=1`,
-    nowPlayingMovie: `/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`,
-    popularMovie: `/movie/popular?api_key=${apiKey}&language=en-US&page=1`,
-    topRatedMovie: `/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`,
-    upcomingMovie: `/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`,
+    nowPlayingMovie: `/movie/now_playing?api_key=${apiKey}&language=en-US&page=`,
+    popularMovie: `/movie/popular?api_key=${apiKey}&language=en-US&page=`,
+    topRatedMovie: `/movie/top_rated?api_key=${apiKey}&language=en-US&page=`,
+    upcomingMovie: `/movie/upcoming?api_key=${apiKey}&language=en-US&page=`,
     searchMovieByKeyword: (keyword: string) =>
-        `/search/movie?api_key=${apiKey}&query=${keyword}&page=1`,
+        `/search/movie?api_key=${apiKey}&query=${keyword}&page=`,
 };
 
 @Injectable({
@@ -33,9 +33,9 @@ export class MovieService {
 
     constructor() {}
 
-    getMovies(): Observable<MovieDetail> {
-        return this.http.get<MovieDetail>(
-            `${apiBaseUrl}${apiPaths.discoverMovie}?api_key=${apiKey}`
+    getMovies(page: number = 1): Observable<any> {
+        return this.http.get<any>(
+            `${apiBaseUrl}${apiPaths.discoverMovie}?api_key=${apiKey}&page=${page}`
         );
     }
 
@@ -56,39 +56,40 @@ export class MovieService {
             `${apiBaseUrl}${apiPaths.movieReviews(id)}`
         );
     }
+
     getMovieRecommendations(id: number): Observable<MovieDetailPage> {
         return this.http.get<MovieDetailPage>(
             `${apiBaseUrl}${apiPaths.movieRecommendations(id)}`
         );
     }
 
-    getNowPlayingMovies(): Observable<MovieDetail> {
-        return this.http.get<MovieDetail>(
-            `${apiBaseUrl}${apiPaths.nowPlayingMovie}`
+    getNowPlayingMovies(page: number = 1): Observable<any> {
+        return this.http.get<any>(
+            `${apiBaseUrl}${apiPaths.nowPlayingMovie}${page}`
         );
     }
 
-    getPopularMovies(): Observable<MovieDetail> {
-        return this.http.get<MovieDetail>(
-            `${apiBaseUrl}${apiPaths.popularMovie}`
+    getPopularMovies(page: number = 1): Observable<any> {
+        return this.http.get<any>(
+            `${apiBaseUrl}${apiPaths.popularMovie}${page}`
         );
     }
 
-    getTopRatedMovies(): Observable<MovieDetail> {
-        return this.http.get<MovieDetail>(
-            `${apiBaseUrl}${apiPaths.topRatedMovie}`
+    getTopRatedMovies(page: number = 1): Observable<any> {
+        return this.http.get<any>(
+            `${apiBaseUrl}${apiPaths.topRatedMovie}${page}`
         );
     }
 
-    getUpcomingMovies(): Observable<MovieDetail> {
-        return this.http.get<MovieDetail>(
-            `${apiBaseUrl}${apiPaths.upcomingMovie}`
+    getUpcomingMovies(page: number = 1): Observable<any> {
+        return this.http.get<any>(
+            `${apiBaseUrl}${apiPaths.upcomingMovie}${page}`
         );
     }
 
-    searchMoviesByKeyword(search: string): Observable<MovieDetail> {
-        return this.http.get<MovieDetail>(
-            `${environment.apiBaseUrl}${apiPaths.searchMovieByKeyword(search)}`
+    searchMoviesByKeyword(search: string, page: number = 1): Observable<any> {
+        return this.http.get<any>(
+            `${apiBaseUrl}${apiPaths.searchMovieByKeyword(search)}${page}`
         );
     }
 }

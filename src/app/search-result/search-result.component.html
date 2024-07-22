@@ -1,3 +1,17 @@
-<app-movies-section [sectionTitle]="'Search results for: ' + sectionTitle">
+<!-- <app-movies-section [sectionTitle]="'Search results for: ' + sectionTitle">
     <app-movie [searchQuery]="searchTerm"></app-movie>
-</app-movies-section>
+</app-movies-section> -->
+
+<div class="container">
+    <header class="section-title">{{ sectionTitle }}</header>
+    <div class="movie-list">
+        @for (movie of movies; track $index) {
+        <app-card [movie]="movie"></app-card>
+        }
+    </div>
+    @if (loading) {
+    <div class="skeleton-container">
+        <div class="skeleton-card" *ngFor="let _ of [1, 2, 3, 4, 5]"></div>
+    </div>
+    }
+</div>

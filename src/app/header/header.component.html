@@ -1,0 +1,32 @@
+<header class="header">
+    <div class="container">
+        <a routerLink="/" class="logo" #logo>MovieApp</a>
+        <nav class="nav">
+            <div class="search-container" #searchContainer>
+                <form class="search-form" (submit)="handleSubmit($event)">
+                    <input
+                        #searchInput
+                        type="text"
+                        placeholder="Search movies..."
+                        class="search-input"
+                        (keyup.enter)="handleSubmit($event)"
+                    />
+                </form>
+            </div>
+            <div
+                class="search-icon-container"
+                #searchIconContainer
+                (click)="showSearchBar()"
+            >
+                <img src="assets/images/search.svg" alt="search icon" />
+            </div>
+            <div
+                class="close-icon-container"
+                #closeIconContainer
+                (click)="hideSearchBar()"
+            >
+                <img src="assets/images/close.svg" alt="close icon" />
+            </div>
+        </nav>
+    </div>
+</header>

@@ -1,175 +1,382 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    transform: scale(1.1);
+    z-index: -1;
+    overflow: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
+    /* max-width: 1280px; */
+    margin: 0 auto;
+    padding: 50px;
+    color: white;
 }
 
 .movie-details {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    word-break: break-all;
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .poster {
-  margin-right: 20px;
-  border: 1px solid white;
-  background-color: white;
-  border-radius: 5px;
+    margin-right: 20px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 5px;
+    width: 200px;
 }
 
 .poster img {
-  width: 200px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .info {
-  flex: 1;
+    flex: 1;
+    width: 100%;
 }
 
 .title {
-  font-size: 24px;
-  margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
 .tagline {
-  font-style: italic;
-  color: skyblue;
-  margin-bottom: 10px;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 10px;
 }
 
 .details p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
+    color: #ccc;
 }
 
 .production-companies {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
 .production-companies li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #ccc;
 }
 
 .overview {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .videos {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .video-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 20px 0;
 }
 
-.video-container iframe {
-  padding: 20px;
+.video-container > iframe {
+    border-radius: 8px;
 }
 
 .reviews {
-  margin-top: auto;
-  margin-bottom: 20px;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 
 .reviews-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .review {
-  width: calc(100% - 20px);
-  padding: 20px;
-  margin-bottom: 20px;
-  gap: 20px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .review .author {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.review .author > div {
+    display: flex;
+    align-items: center;
 }
 
 .review .author img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .review .content {
-  margin-bottom: 10px;
-  text-align: start;
-  gap: 30px;
-  word-wrap: break-word;
+    margin-bottom: 10px;
+    text-align: start;
+    text-align: justify;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .review .rating {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .review .created-at {
-  color: #888;
-  font-style: italic;
-  margin-top: 10px;
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 .review a {
-  margin-top: 3px;
-  display: block;
-  color: gray;
-  text-decoration: none;
+    margin-top: 3px;
+    display: block;
+    color: gray;
+    text-decoration: none;
 }
 
 .review a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .no-reviews,
 .no-recommendations {
-  text-align: center;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid gray;
-  letter-spacing: 2px;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid gray;
+    letter-spacing: 2px;
 }
 
 .recommendations .container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (max-width: 1068px) {
+    .video-container {
+        flex-wrap: wrap;
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-  .movie-details {
+    .container {
+        padding: 10px;
+    }
+
+    .movie-details {
+        flex-wrap: wrap;
+    }
+
+    .review {
+        font-size: 0.75rem;
+    }
+
+    .videos {
+        margin: 0 auto;
+    }
+
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .video-container iframe {
+        width: 100%;
+    }
+
+    .content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .poster {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.skeleton-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.skeleton-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
     flex-wrap: wrap;
-  }
+}
 
-  .videos {
-    margin: 0 auto;
-  }
+.skeleton-poster {
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(-90deg, #1e1e1e 25%, #242424 50%, #161616 75%);
+    background-size: 400% 400%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 5px;
+    margin-right: 20px;
+}
 
-  .video-container {
+.skeleton-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.skeleton-title,
+.skeleton-tagline,
+.skeleton-detail {
+    height: 20px;
+    background: linear-gradient(-90deg, #1e1e1e 25%, #242424 50%, #161616 75%);
+    background-size: 400% 400%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.skeleton-title {
+    width: 70%;
+    height: 30px;
+}
+
+.skeleton-tagline {
+    width: 50%;
+    height: 20px;
+}
+
+.skeleton-detail {
+    width: 90%;
+}
+
+.skeleton-videos {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.skeleton-video {
+    width: 560px;
+    height: 315px;
+    background: linear-gradient(-90deg, #1e1e1e 25%, #242424 50%, #161616 75%);
+    background-size: 400% 400%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+.skeleton-reviews {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-  }
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-  .video-container iframe {
+.skeleton-review {
+    height: 120px;
     width: 100%;
-  }
+    background: linear-gradient(-90deg, #1e1e1e 25%, #242424 50%, #161616 75%);
+    background-size: 400% 400%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .skeleton-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skeleton-poster {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .skeleton-info {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .skeleton-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .skeleton-reviews {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }

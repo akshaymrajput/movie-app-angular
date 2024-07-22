@@ -1,15 +1,17 @@
+<div
+    class="background"
+    [style.backgroundImage]="'url(/assets/images/bg-home.jpg)'"
+>
+    <div class="overlay"></div>
+</div>
 <main>
     @for(homePageSectionDetail of homePageSectionDetails; track
-    homePageSectionDetail.sectionTitle) { @if(!homePageSectionDetail?.lazyDelay)
-    {
-    <app-movies-section [sectionTitle]="homePageSectionDetail.sectionTitle">
+    homePageSectionDetail.sectionTitle) {
+    <app-movies-section
+        [sectionTitle]="homePageSectionDetail.sectionTitle"
+        [seeMoreUrl]="homePageSectionDetail.seeMoreUrl"
+    >
         <app-movie [movieType]="homePageSectionDetail.movieType"></app-movie>
     </app-movies-section>
-    } @else { @defer (on viewport) {
-    <app-movies-section [sectionTitle]="homePageSectionDetail.sectionTitle">
-        <app-movie [movieType]="homePageSectionDetail.movieType"></app-movie>
-    </app-movies-section>
-    } @placeholder (minimum 3s) {
-    <section><app-placeholder></app-placeholder></section>
-    } } }
+    }
 </main>

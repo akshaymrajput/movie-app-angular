@@ -16,6 +16,7 @@ export interface MovieDetail {
 }
 
 export interface MovieDetailPage {
+    results: any[];
     adult: boolean;
     backdrop_path: string;
     belongs_to_collection: any;

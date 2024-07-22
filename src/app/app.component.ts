@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
-import { SearchComponent } from "./search/search.component";
+import { HeaderComponent } from "./header/header.component";
 import { filter } from "rxjs";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, SearchComponent],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
 })

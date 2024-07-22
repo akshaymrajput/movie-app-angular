@@ -1,9 +1,19 @@
-<div class="container">
+<div class="container" #carouselContainer>
     @if(!movies || movies.length === 0) {
     <div>
         <p>No movies found.</p>
     </div>
-    } @else { @for(movie of movies; track movie.id){
-    <app-card [movie]="movie"></app-card>
-    } }
+    } @else {
+    <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+    >
+        @for(movie of movies; track movie.id){
+        <div ngxSlickItem class="slide">
+            <app-card [movie]="movie"></app-card>
+        </div>
+        }
+    </ngx-slick-carousel>
+    }
 </div>

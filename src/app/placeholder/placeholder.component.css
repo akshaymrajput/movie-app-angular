@@ -1,21 +1,17 @@
-header.section-title {
-    text-shadow: 1px 2px 3px rgba(120, 234, 234, 0.8);
-    box-shadow: 0 2px 0px rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
-    letter-spacing: 5px;
-    font-weight: 700;
-    text-align: center;
-    margin: 20px 0px;
-    font-size: 24px;
+.loading-section {
+    padding: 20px;
+}
+.section-title {
+    padding: 10px;
+    font-size: 1.5rem;
 }
 
 .movie-list {
     border-radius: 5px;
-    padding: 20px 0;
+    padding: 10px;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
+    overflow: clip;
 }
 
 .movie-list .container {
@@ -27,13 +23,11 @@ header.section-title {
 
 .card {
     position: relative;
-    border: 1px solid #ddd;
     background-color: black;
     border-radius: 6px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 200px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px 2px;
+    width: 350px;
 }
 
 .card .img-container {

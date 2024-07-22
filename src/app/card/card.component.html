@@ -1,7 +1,11 @@
-<div class="card" [routerLink]="['/movie-detail', movie.id]">
+<div class="card" loading="lazy" (click)="onMouseUp()">
     <div class="img-container">
-        <img class="cover" [src]="getFullImageUrl(movie.poster_path)" alt="movie poster"
-            (error)="handleImageError($event)">
+        <img
+            class="cover"
+            [src]="getFullImageUrl(movie.poster_path)"
+            alt="movie poster"
+            (error)="handleImageError($event)"
+        />
     </div>
     <div class="details">
         <h2 class="title">{{ movie.title }}</h2>

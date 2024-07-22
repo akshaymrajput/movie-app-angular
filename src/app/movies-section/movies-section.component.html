@@ -1,6 +1,11 @@
 <main>
     <section>
-        <header class="section-title">{{ sectionTitle }}</header>
+        <div class="section-header">
+            <header class="section-title">{{ sectionTitle }}</header>
+            <a (click)="redirectTo(seeMoreUrl)" class="see-more-link"
+                >See More</a
+            >
+        </div>
         <div class="movie-list">
             <ng-content></ng-content>
         </div>

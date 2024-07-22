@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-placeholder",
-  standalone: true,
-  imports: [],
-  templateUrl: "./placeholder.component.html",
-  styleUrl: "./placeholder.component.css",
+    selector: "app-placeholder",
+    standalone: true,
+    imports: [],
+    templateUrl: "./placeholder.component.html",
+    styleUrl: "./placeholder.component.css",
 })
 export class PlaceholderComponent {
-  skeletons = new Array(5);
+    skeletons = new Array(5);
 }
