@@ -47,6 +47,7 @@
 }
 
 .poster {
+<<<<<<< HEAD
     margin-right: 20px;
     border: 1px solid white;
     background-color: white;
@@ -58,6 +59,19 @@
     width: 100%;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+=======
+  margin-right: 20px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.poster img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+>>>>>>> 256bbded9561a7517389c7ac9f5ecd02ac883653
 }
 
 .info {
@@ -153,6 +167,7 @@
 }
 
 .review .content {
+<<<<<<< HEAD
     margin-bottom: 10px;
     text-align: start;
     text-align: justify;
@@ -162,6 +177,15 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+=======
+  margin-bottom: 10px;
+  text-align: start;
+  gap: 30px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+>>>>>>> 256bbded9561a7517389c7ac9f5ecd02ac883653
 }
 
 .review .rating {
@@ -210,6 +234,7 @@
 }
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
     .container {
         padding: 10px;
     }
@@ -263,6 +288,13 @@
     align-items: flex-start;
     width: 100%;
     margin-bottom: 20px;
+=======
+  .poster {
+    width: 100%;
+  }
+
+  .movie-details {
+>>>>>>> 256bbded9561a7517389c7ac9f5ecd02ac883653
     flex-wrap: wrap;
 }
 
@@ -330,6 +362,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+<<<<<<< HEAD
     gap: 20px;
     justify-content: center;
     margin-bottom: 20px;
@@ -379,4 +412,20 @@
     100% {
         background-position: -200% 0;
     }
+=======
+    flex-direction: row;
+  }
+
+  .video-container iframe {
+    width: 100%;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .content .info {
+    margin-top: 20px;
+  }
+>>>>>>> 256bbded9561a7517389c7ac9f5ecd02ac883653
 }
